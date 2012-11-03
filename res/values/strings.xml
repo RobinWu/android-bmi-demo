@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, BMIActivity!</string>
+    <string name="app_name">BMI</string>
+    <string name="height">身高(CM)</string>
+    <string name="weight">体重(Kg)</string>
+    <string name="calc">计算 BMI 值</string>
+    <string name="bmi_btn">你的 BMI 值是</string>
+</resources>
