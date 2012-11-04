@@ -18,9 +18,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class BMIActivity<Bmi> extends Activity {
+	/* ------------------- var ----------------- */
 	protected static final int MENU_ABOUT = Menu.FIRST;
 	protected static final int MENU_QUIT = Menu.FIRST + 1;
-	
+
+	private Button buttoncalc;
+    private EditText fieldheight;
+    private EditText fieldweight;
+    private TextView result;
+    private TextView suggest;
+    
+    /* ------------------- Override methods ----------------- */
+    
     @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
@@ -52,16 +61,12 @@ public class BMIActivity<Bmi> extends Activity {
         setListeners();
     }
     
+    /* ------------------- private methods ----------------- */
+    
     private void setListeners() {
         buttoncalc.setOnClickListener(calcBMI);
 	}
 
-	private Button buttoncalc;
-    private EditText fieldheight;
-    private EditText fieldweight;
-    private TextView result;
-    private TextView suggest;
-    
     private void findViews() {
         buttoncalc = (Button)findViewById(R.id.submit);
 		fieldheight = (EditText)findViewById(R.id.height);
@@ -75,24 +80,18 @@ public class BMIActivity<Bmi> extends Activity {
 		Toast.makeText(BMIActivity.this, R.string.toast_msg, Toast.LENGTH_SHORT).show();
 		*/
 		/* Open dialog */
-		
 		new AlertDialog.Builder(BMIActivity.this)
 		.setTitle(R.string.about_title)
 		.setMessage(R.string.about_msg)
 		.setNegativeButton(R.string.label_homepage, new DialogInterface.OnClickListener() {
-			
 			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
 				Uri uri = Uri.parse(getString(R.string.homepage_uri));
 				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 				startActivity(intent);
 			}
 		})
 		.setPositiveButton(R.string.label_ok,new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void onClick(DialogInterface dialog, int which) {}
 		})
 		.show();			
 	};
@@ -119,7 +118,5 @@ public class BMIActivity<Bmi> extends Activity {
 				Toast.makeText(BMIActivity.this, "打错了吗？只能输入数字喔", Toast.LENGTH_SHORT).show();
 			}
 		}
-	
-    	
     };
 }
