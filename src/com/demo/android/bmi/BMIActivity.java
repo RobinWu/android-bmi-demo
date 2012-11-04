@@ -33,8 +33,8 @@ public class BMIActivity<Bmi> extends Activity {
     @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
-		menu.add(0, MENU_ABOUT, 0, R.string.label_menu_about);
-		menu.add(0, MENU_QUIT, 0, R.string.label_menu_quit);
+		menu.add(0, MENU_ABOUT, 0, R.string.label_menu_about).setIcon(android.R.drawable.ic_menu_help);
+		menu.add(0, MENU_QUIT, 0, R.string.label_menu_quit).setIcon(android.R.drawable.ic_menu_close_clear_cancel);
 		return super.onCreateOptionsMenu(menu);
 	}
 
