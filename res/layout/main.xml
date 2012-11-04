@@ -7,7 +7,7 @@
 	android:inputType="number">
     <requestFocus></requestFocus>
 </EditText>
-<TextView android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/weight"></TextView>
+<TextView android:id="@+id/textView2" android:layout_height="wrap_content" android:text="@string/weight" android:layout_width="fill_parent"></TextView>
 <EditText android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/weight"
     android:inputType="number"></EditText>
 <Button android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/calc" android:id="@+id/submit"></Button>

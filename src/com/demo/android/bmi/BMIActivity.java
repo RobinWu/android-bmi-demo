@@ -47,20 +47,24 @@ public class BMIActivity<Bmi> extends Activity {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			DecimalFormat nf = new DecimalFormat("0.00");
-			double height = Double.parseDouble(fieldheight.getText().toString())/100;
-			double weight = Double.parseDouble(fieldweight.getText().toString());
-			double BMI = weight / (height * height);
-			
-			result.setText("Your result" + nf.format(BMI));
-			
-			if(BMI > 25) {
-				suggest.setText(R.string.advice_heavy);
-			} else if (BMI < 20) {
-				suggest.setText(R.string.advice_light);
-			} else {
-				suggest.setText(R.string.advice_average);
+			try {
+				double height = Double.parseDouble(fieldheight.getText().toString())/100;
+				double weight = Double.parseDouble(fieldweight.getText().toString());
+				double BMI = weight / (height * height);
+				
+				result.setText("Your result" + nf.format(BMI));
+				
+				if(BMI > 25) {
+					suggest.setText(R.string.advice_heavy);
+				} else if (BMI < 20) {
+					suggest.setText(R.string.advice_light);
+				} else {
+					suggest.setText(R.string.advice_average);
+				}
+				openOptionDailog();
+			} catch(Exception obj) {
+				Toast.makeText(BMIActivity.this, "打错了吗？只能输入数字喔", Toast.LENGTH_SHORT).show();
 			}
-			openOptionDailog();
 		}
 
 		private void openOptionDailog() {
