@@ -82,7 +82,7 @@ public class BMIActivity<Bmi> extends Activity {
 				
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub
-					Uri uri = Uri.parse("http://www.baidu.com");
+					Uri uri = Uri.parse(getString(R.string.homepage_uri));
 					Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 					startActivity(intent);
 				}
