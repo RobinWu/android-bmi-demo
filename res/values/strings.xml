@@ -6,4 +6,6 @@
     <string name="weight">体重(Kg)</string>
     <string name="calc">计算 BMI 值</string>
     <string name="bmi_btn">你的 BMI 值是</string>
+    <string name="about_title">关于 Android BMI</string>
+    <string name="about_msg">Android BMI calc</string>
 </resources>

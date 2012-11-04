@@ -26,6 +26,8 @@ public final class R {
         public static final int main=0x7f030000;
     }
     public static final class string {
+        public static final int about_msg=0x7f04000a;
+        public static final int about_title=0x7f040009;
         public static final int advice_average=0x7f040001;
         public static final int advice_heavy=0x7f040002;
         public static final int advice_light=0x7f040000;

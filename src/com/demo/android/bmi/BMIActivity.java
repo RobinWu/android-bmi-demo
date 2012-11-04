@@ -63,8 +63,8 @@ public class BMIActivity<Bmi> extends Activity {
 
 		private void openOptionDailog() {
 			new AlertDialog.Builder(BMIActivity.this)
-			.setTitle("关于 Android BMI")
-			.setMessage("Android BMI calc")
+			.setTitle(R.string.about_title)
+			.setMessage(R.string.about_msg)
 			.show();
 		}
     	
