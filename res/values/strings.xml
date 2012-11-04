@@ -12,4 +12,6 @@
     <string name="toast_msg">BMI 计算器</string>
     <string name="label_homepage">首页</string>
     <string name="homepage_uri">http://www.baidu.com</string>
+    <string name="label_menu_about">关于...</string>
+    <string name="label_menu_quit">结束</string>
 </resources>
