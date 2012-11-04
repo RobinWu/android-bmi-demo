@@ -36,6 +36,8 @@ public final class R {
         public static final int calc=0x7f040007;
         public static final int height=0x7f040005;
         public static final int hello=0x7f040003;
+        public static final int homepage_uri=0x7f04000e;
+        public static final int label_homepage=0x7f04000d;
         public static final int label_ok=0x7f04000b;
         public static final int toast_msg=0x7f04000c;
         public static final int weight=0x7f040006;
