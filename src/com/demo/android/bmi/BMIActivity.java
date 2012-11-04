@@ -3,6 +3,7 @@ package com.demo.android.bmi;
 import java.text.DecimalFormat;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class BMIActivity extends Activity {
+public class BMIActivity<Bmi> extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,14 @@ public class BMIActivity extends Activity {
 			} else {
 				suggest.setText(R.string.advice_average);
 			}
+			openOptionDailog();
+		}
+
+		private void openOptionDailog() {
+			new AlertDialog.Builder(BMIActivity.this)
+			.setTitle("关于 Android BMI")
+			.setMessage("Android BMI calc")
+			.show();
 		}
     	
     };
