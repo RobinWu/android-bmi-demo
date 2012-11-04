@@ -9,4 +9,5 @@
     <string name="about_title">关于 Android BMI</string>
     <string name="about_msg">Android BMI calc</string>
     <string name="label_ok">确认</string>
+    <string name="toast_msg">BMI 计算器</string>
 </resources>

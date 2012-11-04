@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class BMIActivity<Bmi> extends Activity {
     /** Called when the activity is first created. */
@@ -63,6 +64,10 @@ public class BMIActivity<Bmi> extends Activity {
 		}
 
 		private void openOptionDailog() {
+			Toast.makeText(BMIActivity.this, R.string.toast_msg, Toast.LENGTH_SHORT).show();
+			
+			/* Open dialog */
+			/*
 			new AlertDialog.Builder(BMIActivity.this)
 			.setTitle(R.string.about_title)
 			.setMessage(R.string.about_msg)
@@ -73,6 +78,7 @@ public class BMIActivity<Bmi> extends Activity {
 				}
 			})
 			.show();
+			*/
 		}
     	
     };
