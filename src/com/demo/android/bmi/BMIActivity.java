@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -65,6 +66,12 @@ public class BMIActivity<Bmi> extends Activity {
 			new AlertDialog.Builder(BMIActivity.this)
 			.setTitle(R.string.about_title)
 			.setMessage(R.string.about_msg)
+			.setPositiveButton(R.string.label_ok,new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					
+				}
+			})
 			.show();
 		}
     	

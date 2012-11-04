@@ -8,4 +8,5 @@
     <string name="bmi_btn">你的 BMI 值是</string>
     <string name="about_title">关于 Android BMI</string>
     <string name="about_msg">Android BMI calc</string>
+    <string name="label_ok">确认</string>
 </resources>
