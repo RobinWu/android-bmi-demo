@@ -121,6 +121,10 @@ public class BMIActivity<Bmi> extends Activity {
 			*/
 			Intent intent = new Intent();
 			intent.setClass(BMIActivity.this, Report.class);
+			Bundle bundle = new Bundle();
+			bundle.putString("KEY_HEIGHT", fieldheight.getText().toString());
+			bundle.putString("KEY_WEIGHT", fieldweight.getText().toString());
+			intent.putExtras(bundle);
 			startActivity(intent);
 		}
     };

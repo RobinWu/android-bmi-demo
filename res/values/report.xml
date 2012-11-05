@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="report_title">BMI 报告</string>
+    <string name="report_back">返回</string>
+    <string name="bmi_result">BMI 值是:</string>
     
 </resources>

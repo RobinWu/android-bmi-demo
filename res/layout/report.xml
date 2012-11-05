@@ -4,5 +4,8 @@
   android:orientation="vertical"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/result"></TextView>
+    <TextView android:layout_height="wrap_content" android:id="@+id/suggest" android:layout_width="fill_parent"></TextView>
+    <Button android:layout_height="wrap_content" android:id="@+id/report_back" android:text="@string/report_back" android:layout_width="fill_parent"></Button>
     
 </LinearLayout>
