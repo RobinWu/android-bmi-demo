@@ -47,7 +47,9 @@ public class Report extends Activity {
 
 	private void showNotification(double BMI) {
 		NotificationManager barManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-		Notification barMsg = new Notification(R.drawable.icon, "哦，你太重了！", System.currentTimeMillis());
+		// Notification barMsg = new Notification(R.drawable.icon, "哦，你太重了！", System.currentTimeMillis());
+		/* use sys icon notification */
+		Notification barMsg = new Notification(android.R.drawable.stat_sys_warning, "哦，你太重了！", System.currentTimeMillis());
 		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, BMIActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
 		barMsg.setLatestEventInfo(Report.this, "你的BMI值太高", "通知监督人", contentIntent);
 		barManager.notify(0, barMsg);
