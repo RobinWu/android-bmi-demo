@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 public class BMIActivity<Bmi> extends Activity {
 	/* ------------------- var ----------------- */
+	private static final String TAG = "Bmi";
 	protected static final int MENU_ABOUT = Menu.FIRST;
 	protected static final int MENU_QUIT = Menu.FIRST + 1;
 
@@ -64,10 +66,12 @@ public class BMIActivity<Bmi> extends Activity {
     /* ------------------- private methods ----------------- */
     
     private void setListeners() {
+    	Log.d(TAG, "set Listeners");
         buttoncalc.setOnClickListener(calcBMI);
 	}
 
     private void findViews() {
+    	Log.d(TAG, "find Views");
         buttoncalc = (Button)findViewById(R.id.submit);
 		fieldheight = (EditText)findViewById(R.id.height);
 		fieldweight = (EditText)findViewById(R.id.weight);
