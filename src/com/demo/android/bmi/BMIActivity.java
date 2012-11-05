@@ -19,8 +19,61 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class BMIActivity<Bmi> extends Activity {
-	/* ------------------- var ----------------- */
 	private static final String TAG = "Bmi";
+	/** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.v(TAG, "onCreate");
+
+        setContentView(R.layout.main);
+        findViews();
+        setListeners();
+    }
+    
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		Log.v(TAG, "onDestroy");
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		Log.v(TAG, "onPause");
+	}
+
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+		Log.v(TAG, "onRestart");
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Log.v(TAG, "onResume");
+	}
+
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		Log.v(TAG, "onStart");
+	}
+
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		Log.v(TAG, "onStop");
+	}
+
+	/* ------------------- var ----------------- */
 	protected static final int MENU_ABOUT = Menu.FIRST;
 	protected static final int MENU_QUIT = Menu.FIRST + 1;
 
@@ -52,16 +105,6 @@ public class BMIActivity<Bmi> extends Activity {
 		};
 		return super.onOptionsItemSelected(item);
 	}
-
-	/** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        
-        findViews();
-        setListeners();
-    }
     
     /* ------------------- private methods ----------------- */
     
