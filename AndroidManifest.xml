@@ -13,6 +13,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="Report" android:label="@string/report_title"></activity>
 
     </application>
 </manifest>

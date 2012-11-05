@@ -98,6 +98,7 @@ public class BMIActivity<Bmi> extends Activity {
 	
     private OnClickListener calcBMI = new OnClickListener() {
 		public void onClick(View v) {
+			/*
 			DecimalFormat nf = new DecimalFormat("0.00");
 			try {
 				double height = Double.parseDouble(fieldheight.getText().toString())/100;
@@ -117,6 +118,10 @@ public class BMIActivity<Bmi> extends Activity {
 			} catch(Exception obj) {
 				Toast.makeText(BMIActivity.this, "打错了吗？只能输入数字喔", Toast.LENGTH_SHORT).show();
 			}
+			*/
+			Intent intent = new Intent();
+			intent.setClass(BMIActivity.this, Report.class);
+			startActivity(intent);
 		}
     };
 }
