@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,8 +29,22 @@ public class BMIActivity<Bmi> extends Activity {
 
         setContentView(R.layout.main);
         findViews();
+		restorePrefs();
         setListeners();
     }
+    
+
+	public static final String PREF = "BMI_PREF";
+	public static final String PREF_HEIGHT = "BMI_HEIGHT";
+	private void restorePrefs() {
+		Log.v(TAG, "restorePrefs");
+		SharedPreferences settings = getSharedPreferences(PREF, 0);
+		String pref_height = settings.getString(PREF_HEIGHT, "");
+		if(!"".equals(pref_height)) {
+			fieldheight.setText(pref_height);
+			fieldweight.requestFocus();
+		}
+	}
     
 	@Override
 	protected void onDestroy() {
@@ -43,6 +58,8 @@ public class BMIActivity<Bmi> extends Activity {
 		// TODO Auto-generated method stub
 		super.onPause();
 		Log.v(TAG, "onPause");
+		SharedPreferences settings = getSharedPreferences(PREF, 0);
+		settings.edit().putString(PREF_HEIGHT, fieldheight.getText().toString()).commit();
 	}
 
 	@Override
