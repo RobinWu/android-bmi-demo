@@ -20,7 +20,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class BMIActivity<Bmi> extends Activity {
+	/* ------------------- var ----------------- */
+	public static final String PREF = "BMI_PREF";
+	public static final String PREF_HEIGHT = "BMI_HEIGHT";
+
+	protected static final int MENU_ABOUT = Menu.FIRST;
+	protected static final int MENU_QUIT = Menu.FIRST + 1;
+
 	private static final String TAG = "Bmi";
+	private Button buttoncalc;
+    private EditText fieldheight;
+    private EditText fieldweight;
+    private TextView result;
+    private TextView suggest;
+    
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,19 +45,6 @@ public class BMIActivity<Bmi> extends Activity {
 		restorePrefs();
         setListeners();
     }
-    
-
-	public static final String PREF = "BMI_PREF";
-	public static final String PREF_HEIGHT = "BMI_HEIGHT";
-	private void restorePrefs() {
-		Log.v(TAG, "restorePrefs");
-		SharedPreferences settings = getSharedPreferences(PREF, 0);
-		String pref_height = settings.getString(PREF_HEIGHT, "");
-		if(!"".equals(pref_height)) {
-			fieldheight.setText(pref_height);
-			fieldweight.requestFocus();
-		}
-	}
     
 	@Override
 	protected void onDestroy() {
@@ -89,19 +89,7 @@ public class BMIActivity<Bmi> extends Activity {
 		super.onStop();
 		Log.v(TAG, "onStop");
 	}
-
-	/* ------------------- var ----------------- */
-	protected static final int MENU_ABOUT = Menu.FIRST;
-	protected static final int MENU_QUIT = Menu.FIRST + 1;
-
-	private Button buttoncalc;
-    private EditText fieldheight;
-    private EditText fieldweight;
-    private TextView result;
-    private TextView suggest;
-    
-    /* ------------------- Override methods ----------------- */
-    
+        
     @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
@@ -124,7 +112,17 @@ public class BMIActivity<Bmi> extends Activity {
 	}
     
     /* ------------------- private methods ----------------- */
-    
+
+	private void restorePrefs() {
+		Log.v(TAG, "restorePrefs");
+		SharedPreferences settings = getSharedPreferences(PREF, 0);
+		String pref_height = settings.getString(PREF_HEIGHT, "");
+		if(!"".equals(pref_height)) {
+			fieldheight.setText(pref_height);
+			fieldweight.requestFocus();
+		}
+	}
+
     private void setListeners() {
     	Log.d(TAG, "set Listeners");
         buttoncalc.setOnClickListener(calcBMI);
